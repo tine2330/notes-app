@@ -1,22 +1,28 @@
-import { StyleSheet, Text, View } from "react-native";
+// app/(tabs)/index.tsx
+import React, { useEffect, useState } from "react";
+import AuthScreen from "../../AuthScreen";
+import NotesScreen from "../../NotesScreen";
+import { supabase } from "../../supabaseClient";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Notes App</Text>
-      <Text>React Native + Supabase</Text>
-    </View>
-  );
-}
+  const [user, setUser] = useState(null);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-});
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session?.user) setUser(data.session.user);
+    });
+
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        if (session?.user) setUser(session.user);
+        else setUser(null);
+      }
+    );
+
+    return () => listener.subscription.unsubscribe();
+  }, []);
+
+  if (!user) return <AuthScreen onSignIn={setUser} />;
+
+  return <NotesScreen user={user} />;
+}
