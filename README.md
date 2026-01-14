@@ -1,50 +1,43 @@
-# Welcome to your Expo app 👋
+# ✍️ NoteFlow - Modern Note-Taking App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A clean, user-friendly, and unisex mobile application designed to help users organize their thoughts effortlessly. This project was built using **React Native (Expo)** and **Supabase** for secure authentication and real-time data storage.
 
-## Get started
+---
 
-1. Install dependencies
+## 👥 Group Members
+* **Kristine Mae A. De La Cruz** - Group Leader
+* **Chanie A. Ejercito**
+* **Perry Gina V. Abrenica**
+* **Mark Angel V. Tepacia**
+* **Alexander Paul D. Gravador**
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## 📝 Project Description
+NoteFlow is a cross-platform notes application that prioritizes simplicity and security. 
 
-   ```bash
-   npx expo start
-   ```
+**Key Features:**
+* **Secure Authentication:** User registration and login powered by Supabase Auth.
+* **Email Verification:** Ensures valid user accounts via email confirmation links.
+* **Full CRUD Functionality:** Users can Create, Read, Update, and Delete their own notes.
+* **Responsive Design:** A modern, card-based UI that is aesthetically pleasing and unisex.
+* **Data Security:** Implements Row Level Security (RLS) so users can only access their own data.
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🚀 Setup & Installation Instructions
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Follow these steps to get the project running locally:
 
-## Get a fresh project
+### 1. Prerequisites
+Ensure you have [Node.js](https://nodejs.org/) installed on your computer.
 
-When you're ready, run:
-
+### 2. Clone and Install
 ```bash
-npm run reset-project
-```
+git clone [https://github.com/tine2330/notes-app](https://github.com/tine2330/notes-app)
+cd notes-app
+npm install
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 3. Run the Application
+```bash
+npx expo start
